@@ -1,0 +1,20 @@
+/* Adjustments & Corrections */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    line-height: 1.15;
+    /* 1 */
+}
+
+/* Media Queries & Responsive*/
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 1024px) {
+
+}
