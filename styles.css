@@ -13,6 +13,10 @@ html {
     /* 1 */
 }
 
+main {
+    padding: 0 1em;
+}
+
 legend {
     display: table;
     padding: 0;
@@ -31,6 +35,7 @@ body:not(:-moz-handler-blocked) fieldset {
 
 
 header {
+    width: 100%;
     padding: 2em 1em;
     background: #000;
 }
@@ -46,10 +51,10 @@ header h1 {
 
 hr {
     border: none;
-    margin: 1em;
     border-top: 6px solid #000;
     border-bottom: 3px solid #000;
     padding-top: .3em;
+    width: 100%;
 }
 
 #newsletter {
@@ -81,7 +86,6 @@ button {
 }
 
 form {
-    padding: 0 1em;
     display: flex;
     flex-direction: column;
 }
@@ -93,6 +97,11 @@ fieldset {
     display: flex;
 }
 
+fieldset:not(:last-of-type) {
+    margin-bottom: 1em;
+    border-bottom: solid 2px;
+}
+
 legend {
     padding-top: 1em;
     font-family: 'Anonymous Pro', monospace;
@@ -101,11 +110,6 @@ legend {
     color: hsl(0 1% 20%);
 }
 
-
-fieldset:not(:last-of-type) {
-    margin-bottom: 1em;
-    border-bottom: solid 2px;
-}
 
 label {
     font-family: 'Work Sans', sans-serif;
@@ -218,6 +222,23 @@ footer p {
 
 /* Media Queries & Responsive*/
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-@media (min-width: 1024px) {}
+    main {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    main > * {
+        width: 100%;
+    }
+}
