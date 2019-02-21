@@ -17,18 +17,6 @@ main {
     padding: 0 1em;
 }
 
-legend {
-    display: table;
-    padding: 0;
-}
-
-fieldset {
-    border: 0;
-    margin: 0;
-    min-width: 0;
-    padding: 0.01em 0 0 0;
-}
-
 body:not(:-moz-handler-blocked) fieldset {
     display: table-cell;
 }
@@ -83,6 +71,7 @@ button {
     font-size: 2em;
     background: tomato;
     border-radius: .5em;
+    width: 100%;
 }
 
 form {
@@ -90,19 +79,8 @@ form {
     flex-direction: column;
 }
 
-fieldset {
-    margin: 0;
-    padding: 1em 0em;
-    border: none;
-    display: flex;
-}
-
-fieldset:not(:last-of-type) {
-    margin-bottom: 1em;
-    border-bottom: solid 2px;
-}
-
 legend {
+    flex: 1 0 100%;
     padding-top: 1em;
     font-family: 'Anonymous Pro', monospace;
     font-size: 1.8em;
@@ -110,6 +88,41 @@ legend {
     color: hsl(0 1% 20%);
 }
 
+fieldset {
+    margin: 0;
+    padding: 1em 0em;
+    border: none;
+    width: 100%;
+}
+
+fieldset:not(:last-of-type) {
+    margin-bottom: 1em;
+    border-bottom: solid 2px;
+}
+
+#fieldContainer {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+#fieldContainer label,
+#fieldContainerTwo label,
+#fieldContainer select,
+#fieldContainer input:not(#zip),
+#fieldContainerTwo .news-group {
+    flex: 1 0 100%;
+}
+
+#fieldContainerTwo .news-group,
+#fieldContainerTwo textarea {
+    margin: 1.5em 0;
+}
+
+.news-group:not(:first-of-type) {
+    margin-top: .5em;
+
+}
 
 label {
     font-family: 'Work Sans', sans-serif;
@@ -118,10 +131,6 @@ label {
     margin: .5em 0 .5em 0;
 }
 
-select,
-input:not([type="checkbox"]):not([type="radio"]):not(#zip) {
-    width: 100%;
-}
 
 select,
 input:not([type="checkbox"]):not([type="radio"]) {
@@ -139,11 +148,6 @@ input:not([type="checkbox"]):not([type="radio"]):focus {
     outline: none !important;
     border-color: blue;
     box-shadow: 0 0 10px blue;
-}
-
-.news-group:not(:first-of-type) {
-    margin-top: .5em;
-
 }
 
 input[type="radio"],
@@ -177,7 +181,7 @@ select {
         linear-gradient(to right, #ccc, #ccc);
     background-position:
         calc(100% - 30px) calc(.87em),
-        calc(100% - 20px) calc(.87em),
+        calc(100% - 20.5px) calc(.87em),
         calc(100% - 2.5em) 0.2em;
     background-size:
         10px 10px,
@@ -219,8 +223,7 @@ footer p {
 }
 
 
-
-/* Media Queries & Responsive*/
+/* Media Queries */
 
 @media (min-width: 768px) {
     body {
@@ -238,7 +241,19 @@ footer p {
 
     }
 
-    main > * {
-        width: 100%;
+    #fieldContainer > label {
+        padding-top: 0.5em;
+        flex: 0 0 30%;
     }
+
+    #fieldContainer select,
+    #fieldContainer input:not(#zip):not([type="checkbox"]):not([type="radio"]) {
+        flex: 1 0 60%;
+        margin: .5em 0 .5em .5em;
+    }
+
+    #zip {
+        margin: .5em 0 .5em .5em;
+    }
+
 }
