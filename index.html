@@ -32,7 +32,7 @@
                     <input type="email" id="email" name="user_email" placeholder="Required" required>
 
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="user_phone">
+                    <input type="tel" id="phone" name="user_phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="###-###-####">
 
                     <label for="street">Street Address</label>
                     <input type="text" id="street" name="address_street">
@@ -127,7 +127,7 @@
                         <label for="txt_format">Plain text</label>
                     </div>
 
-                    <label>Other topics you'd like to hear about:</label>
+                    <label for="other_topics">Other topics you'd like to hear about:</label>
                     <textarea rows="4" id="other_topics" name="news_topics"></textarea>
                 </div>
             </fieldset>
